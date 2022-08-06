@@ -1,0 +1,62 @@
+.btn {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: flex-end;
+  border-radius: 20px;
+  background-size: contain;
+  height: 100%;
+  overflow: hidden;
+  font-size: 2.5rem;
+  border: 2px solid var(--yellow);
+}
+
+.btn-image {
+  opacity: 0;
+  max-height: 100%;
+}
+
+.btn-overlay {
+  display: flex;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  width: 70%;
+  height: 100%;
+  text-transform: uppercase;
+}
+
+.btn-overlay::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--black-overlay);
+  width: 100%;
+  height: 100%;
+  content: '';
+  clip-path: polygon(10% 0, 100% 0%, 100% 100%, 0% 100%);
+}
+
+.btn-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.btn-content img {
+  width: 1.1em;
+}
+
+.btn-credits {
+  font-size: 1.75rem;
+  line-height: 0.8;
+  white-space: nowrap;
+  gap: 0.5rem;
+}
+
+.btn-credits img {
+  width: 1.2em;
+}

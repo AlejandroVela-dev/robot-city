@@ -1,0 +1,38 @@
+@font-face {
+  font-family: 'VT323-Regular';
+  src: url('assets/fonts/VT323-Regular.woff2');
+}
+
+/* CSS VARIABLES */
+html {
+  --yellow: #f9b92f;
+  --yellow-overlay: hsl(41, 94%, 58%, 25%);
+  --black: hsl(220, 21%, 5%);
+  --black-overlay: hsl(220, 21%, 5%, 80%);
+  --white: hsl(41, 94%, 98%);
+  --success: hsl(84, 84%, 53%);
+  --error: hsl(5, 85%, 45%);
+  --info: hsl(206, 82%, 68%);
+}
+
+html {
+  line-height: 1;
+  color: var(--yellow);
+  font-family: 'VT323-Regular', serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  cursor: url('assets/images/cursor.webp') 16 16, auto;
+  text-shadow: -2px 0 1px #000, 2px 0 1px black, 0 2px 1px #000, 0 -2px 1px #000,
+    -1px -1px 1px #000, 1px 1px 1px #000, -2px -1px 1px #000, 2px 2px 1px #000;
+  font-variant-ligatures: none;
+}
+
+.app {
+  display: grid;
+  position: relative;
+  grid-template-rows: min-content 1fr min-content;
+  grid-template-columns: auto;
+  background-color: var(--black);
+  max-width: 100vw;
+  min-height: 100vh;
+}

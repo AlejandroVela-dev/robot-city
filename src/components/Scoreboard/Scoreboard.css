@@ -1,0 +1,126 @@
+.scoreboard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url('../../assets/images/scoreboard-bg.webp');
+  background-size: cover;
+}
+
+.scoreboard__content {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--black-overlay);
+  padding: 2rem;
+  min-width: 400px;
+  min-height: 550px;
+  text-align: center;
+  color: var(--white);
+  font-size: 1.25rem;
+}
+
+.scoreboard h2,
+.scoreboard h3,
+.scoreboard h5 {
+  text-transform: uppercase;
+}
+
+.scoreboard h2 {
+  color: var(--yellow);
+  font-size: 3.5rem;
+}
+
+.scoreboard h3 {
+  color: var(--yellow);
+  font-size: 2.25rem;
+}
+
+.scoreboard h5 {
+  margin-bottom: 18px;
+  font-size: 1.25rem;
+}
+
+.scores {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+  width: 100%;
+  min-height: 220px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--yellow) var(--yellow-overlay);
+  gap: 8px;
+}
+
+.scores::-webkit-scrollbar {
+  width: 8px;
+}
+
+.scores::-webkit-scrollbar-track {
+  background-color: var(--yellow-overlay);
+}
+
+.scores::-webkit-scrollbar-thumb {
+  background-color: var(--yellow);
+}
+
+.scores .preloader {
+  flex: 1;
+}
+
+.score {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-self: stretch;
+}
+
+.score.player-score {
+  margin-top: auto;
+  color: var(--info);
+}
+
+.score-form {
+  color: var(--yellow);
+  font-size: 1.25rem;
+}
+
+.score-form__submit {
+  display: flex;
+  justify-content: center;
+  margin-top: 8px;
+  gap: 8px;
+}
+
+.score-form button {
+  padding: 0 1.5rem;
+  font-size: 1.25rem;
+}
+
+.btn--retry {
+  margin-top: auto;
+  padding: 0 3rem;
+  font-size: 2.5rem;
+}
+
+.btn--retry,
+.score-form button {
+  transition: all 0.2s ease-in-out;
+  border: 2px solid var(--yellow);
+  background-color: var(--yellow-overlay);
+  cursor: pointer;
+  text-transform: uppercase;
+  color: var(--white);
+  font-family: inherit;
+  -webkit-text-stroke: 0;
+}
+
+.btn--retry:hover,
+.score-form button:hover {
+  border: 2px solid var(--yellow);
+  color: var(--yellow);
+}

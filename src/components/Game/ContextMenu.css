@@ -1,0 +1,29 @@
+.context-menu {
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 20px;
+  background-color: var(--black-overlay);
+  font-size: 1.25rem;
+  overflow: hidden;
+  box-shadow: var(--black) 2px 2px 10px;
+}
+
+.context-menu li {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.context-menu li:hover {
+  background-color: var(--yellow-overlay);
+}
+
+.context-menu img {
+  border: solid 2px var(--yellow);
+  border-radius: 20px;
+  width: 75px;
+}
