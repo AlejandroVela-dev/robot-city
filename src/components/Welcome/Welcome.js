@@ -1,35 +1,30 @@
-import './Intro.css';
+import './Welcome.css';
 import Filter from 'bad-words';
 import { useNotification } from '../../notifications/NotificationProvider';
+const filter = new Filter();
 
-const Intro = ({ setPlayerName, handleGameStart, lostRobots }) => {
-  const NotificationDispatcher = useNotification();
-  const profanityFilter = new Filter();
+const Welcome = ({ setPlayerName, robots, gameStart }) => {
+  const Notification = useNotification();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const playerNameInput = e.target.playerName;
 
-    if (profanityFilter.isProfane(playerNameInput.value)) {
-      NotificationDispatcher({
-        type: 'error',
-        message: 'Hey! No bad words allowed!',
-      });
+    // PlayerName Profanity Check
+    if (filter.isProfane(playerNameInput.value)) {
       playerNameInput.focus();
+      Notification('error', 'Hey! No bad words allowed here!');
     } else {
-      // PlayerName isn't profane, game starts
+      // Game starts
+      Notification('info', "Be quick! There's no time to waste!");
       setPlayerName(playerNameInput.value);
-      handleGameStart();
-      NotificationDispatcher({
-        type: 'info',
-        message: 'Game just started! Be quick!',
-      });
+      gameStart();
     }
   };
 
   return (
-    <div className="intro">
-      <form onSubmit={handleSubmit} className="intro__content">
+    <div className="welcome">
+      <form onSubmit={handleSubmit} className="welcome__content">
         <h2>Robot City</h2>
         <h5>Art by Egor Klyuchnyk</h5>
         <p>Beep beep! I am Alejandro, human/cyborg relations. And you are?</p>
@@ -37,7 +32,7 @@ const Intro = ({ setPlayerName, handleGameStart, lostRobots }) => {
           type="text"
           name="playerName"
           id="playerName"
-          maxLength="36"
+          maxLength="24"
           autoFocus
           required
           autoComplete="off"
@@ -51,7 +46,7 @@ const Intro = ({ setPlayerName, handleGameStart, lostRobots }) => {
           disoriented robots!
         </p>
         <div className="robots">
-          {lostRobots.map((robot) => {
+          {robots.map((robot) => {
             return (
               <div className="robot-description" key={robot.id}>
                 <img src={robot.picture} alt={robot.name} />
@@ -71,4 +66,4 @@ const Intro = ({ setPlayerName, handleGameStart, lostRobots }) => {
   );
 };
 
-export default Intro;
+export default Welcome;

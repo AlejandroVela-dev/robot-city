@@ -1,31 +1,26 @@
 import './ContextMenu.css';
 
-const ContextMenu = ({ lostRobots, searchCoords, handleContextMenuClick }) => {
-  // List of Lost Robots yet to be found
-  const missingRobots = lostRobots
-    .filter((robot) => !robot.hasBeenFound)
-    .map((robot) => (
-      <li
-        key={robot.id}
-        onClick={(e) => {
-          e.stopPropagation();
-          handleContextMenuClick(robot, searchCoords);
-        }}
-      >
-        <img src={robot.picture} alt={robot.name} />
-        {robot.name}
-      </li>
-    ));
+const ContextMenu = ({ robots, clickCoords, searchRobotAtCoords }) => {
+  const lostRobots = robots.filter((robot) => !robot.hasBeenFound);
+
+  const contextMenuStyle = {
+    left: `${clickCoords.x}px`,
+    top: `${clickCoords.y}px`,
+  };
 
   return (
-    <div
-      className="context-menu"
-      style={{
-        left: `${searchCoords.x}px`,
-        top: `${searchCoords.y}px`,
-      }}
-    >
-      {missingRobots}
+    <div className="context-menu" style={contextMenuStyle}>
+      {lostRobots.map((robot) => (
+        <li
+          key={robot.id}
+          onClick={() => {
+            searchRobotAtCoords(robot, clickCoords);
+          }}
+        >
+          <img src={robot.picture} alt={robot.name} />
+          <p>{robot.name}</p>
+        </li>
+      ))}
     </div>
   );
 };

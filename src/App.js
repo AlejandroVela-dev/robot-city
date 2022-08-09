@@ -1,93 +1,83 @@
+import './App.css';
 import { useState } from 'react';
 import { robotsData } from './data/robotsData';
 import Modal from './utils/Modal/Modal';
-import Intro from './components/Intro/Intro';
-import Scoreboard from './components/Scoreboard/Scoreboard';
+import Welcome from './components/Welcome/Welcome';
+import Leaderboard from './components/Leaderboard/Leaderboard';
 import Nav from './components/Nav/Nav';
 import Game from './components/Game/Game';
 import Footer from './components/Footer/Footer';
-import './App.css';
 
 const App = () => {
-  // Handles when game is active (looking for robots) or inactive (intro/scoreboard)
-  const [isGameActive, setIsGameActive] = useState(false);
-
-  // Handles playerName from Intro component to create a score
+  // Stores player properties. Set in "Welcome" component and read in "Leaderboard"
   const [playerName, setPlayerName] = useState('');
-
-  // Stores start-end playerTime in order to create a score
   const [playerTime, setPlayerTime] = useState({ start: 0, end: 0 });
 
-  // Handles content displayed inside Modal component
-  const [modalContent, setModalContent] = useState('intro');
+  // List of Robots and their properties. Gets modified when a robot is found. Feeds UI and back-end fetch actions
+  const [robots, setRobots] = useState(robotsData);
 
-  // Handles if Modal appears on screen
-  const [isModalActive, setIsModalActive] = useState(true);
+  // Toggles between looking for robots or inactive (welcome/leaderboard). Used to control game Timer
+  const [isGameActive, setIsGameActive] = useState(false);
 
-  // Handles the list of Lost Robots and their status
-  const [lostRobots, setLostRobots] = useState(robotsData);
+  // Controls what should be displayed inside Modal component (Welcome/Leaderboard) and its current visibility
+  const [modalContent, setModalContent] = useState('welcome');
+  const [isModalVisible, setIsModalVisible] = useState(true);
 
-  const handleGameStart = () => {
+  const gameStart = () => {
     setIsGameActive(true);
     setPlayerTime({ ...playerTime, start: Date.now() });
-    setIsModalActive(false);
+    setIsModalVisible(false);
   };
 
-  const handleGameEnd = () => {
+  const gameEnd = () => {
+    setRobots(robotsData); // gameEnd is triggered when all Robots are found, we prevent loop by resetting data here
     setIsGameActive(false);
-    setLostRobots(robotsData);
     setPlayerTime({ ...playerTime, end: Date.now() });
-    setModalContent('scoreboard');
-    setIsModalActive(true);
+    setModalContent('leaderboard');
+    setIsModalVisible(true);
   };
 
-  const handleGameRestart = () => {
-    setIsGameActive(false);
+  const gameRestart = () => {
+    setPlayerName();
     setPlayerTime({ start: 0, end: 0 });
-    setPlayerName('');
-    setModalContent('intro');
+    setModalContent('welcome');
   };
 
-  // Returns the updated list of Lost Robots when a Robot is found
-  const findRobot = (robotId) => {
-    const updatedLostRobots = lostRobots.map((robot) => {
+  const robotHasBeenFound = (robotId) => {
+    const robotsUpdate = robots.map((robot) => {
       if (robotId === robot.id) {
         return { ...robot, hasBeenFound: true };
       } else return robot;
     });
-    setLostRobots(updatedLostRobots);
+    setRobots(robotsUpdate);
   };
 
   return (
     <>
-      {isModalActive && (
+      {isModalVisible && (
         <Modal>
-          {modalContent === 'intro' && (
-            <Intro
+          {modalContent === 'welcome' && (
+            <Welcome
               setPlayerName={setPlayerName}
-              handleGameStart={handleGameStart}
-              lostRobots={lostRobots}
+              robots={robots}
+              gameStart={gameStart}
             />
           )}
-          {modalContent === 'scoreboard' && (
-            <Scoreboard
+          {modalContent === 'leaderboard' && (
+            <Leaderboard
               playerName={playerName}
               playerTime={playerTime.end - playerTime.start}
-              handleGameRestart={handleGameRestart}
+              gameRestart={gameRestart}
             />
           )}
         </Modal>
       )}
       <div className="app">
-        <Nav
-          handleGameEnd={handleGameEnd}
-          isGameActive={isGameActive}
-          lostRobots={lostRobots}
-        />
+        <Nav robots={robots} isGameActive={isGameActive} />
         <Game
-          lostRobots={lostRobots}
-          findRobot={findRobot}
-          handleGameEnd={handleGameEnd}
+          robots={robots}
+          robotHasBeenFound={robotHasBeenFound}
+          gameEnd={gameEnd}
         />
         <Footer />
       </div>

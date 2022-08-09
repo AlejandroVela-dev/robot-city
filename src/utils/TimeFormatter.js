@@ -1,15 +1,15 @@
-const convertMsToTime = (ms) => {
-  let seconds = Math.floor(ms / 1000);
-  let minutes = Math.floor(seconds / 60);
-  let hours = Math.floor(minutes / 60);
-  seconds %= 60;
-  minutes %= 60;
+const timeFormatter = (time) => {
+  const date = new Date(time);
+  let ms = Math.floor(date.getMilliseconds() / 10);
+  let seconds = date.getSeconds();
+  let minutes = date.getMinutes();
 
-  hours = hours < 10 ? '0' + hours : hours;
-  minutes = minutes < 10 ? '0' + minutes : minutes;
-  seconds = seconds < 10 ? '0' + seconds : seconds;
+  // String formatting
+  ms = ms.toString().padStart(2, '0');
+  minutes = minutes.toString().padStart(2, '0');
+  seconds = seconds.toString().padStart(2, '0');
 
-  return hours + ':' + minutes + ':' + seconds;
+  return `${minutes}:${seconds}:${ms}`;
 };
 
-export default convertMsToTime;
+export default timeFormatter;

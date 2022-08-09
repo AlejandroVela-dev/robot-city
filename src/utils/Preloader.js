@@ -1,6 +1,4 @@
-import React from 'react';
-
-function Preloader() {
+const Preloader = () => {
   return (
     <svg
       className="preloader"
@@ -51,6 +49,6 @@ function Preloader() {
       </path>
     </svg>
   );
-}
+};
 
 export default Preloader;

@@ -2,7 +2,7 @@
   position: fixed;
   top: 15vh;
   right: 16px;
-  z-index: 999;
+  z-index: 3;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -19,7 +19,7 @@
   border-bottom: none;
   border-radius: 20px;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
-  background-image: url(../assets/images/notification-bg.webp);
+  background-image: url(../assets/images/bg-notification.webp);
   background-size: cover;
   overflow: hidden;
   animation: SlideLeft 0.5s;

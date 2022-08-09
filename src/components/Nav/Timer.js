@@ -1,35 +1,31 @@
 import { useState, useEffect } from 'react';
+import timeFormatter from '../../utils/timeFormatter';
 import Button from '../../utils/Button/Button';
 import BtnBgTimer from '../../assets/images/btn-bg-timer.webp';
 import IconTimer from '../../assets/images/icon-timer.webp';
-import convertMsToTime from '../../utils/TimeFormatter';
 
 const Timer = ({ isGameActive }) => {
-  // Handles timer in milliseconds
-  const [timer, setTimer] = useState(0);
+  const [time, setTime] = useState(0);
 
   useEffect(() => {
     let intervalId;
+    // Player has started looking for looking for Robots
     if (isGameActive) {
-      // Game is active (looking for robots) > Timer starts.
       intervalId = setInterval(() => {
-        setTimer((previousTimer) => previousTimer + 1000);
-      }, 1000);
-    } else {
-      // Game is inactive (intro or scoreboard screen) > Reset timer text.
-      setTimer(0);
+        setTime((prevTime) => prevTime + 10);
+      }, 10);
     }
-
-    // Interval clean-up everytime isGameActive changes.
+    // Clean-up everytime isGameActive changes
     return () => {
       clearInterval(intervalId);
+      setTime(0);
     };
   }, [isGameActive]);
 
   return (
     <>
       <Button
-        text={convertMsToTime(timer)}
+        text={timeFormatter(time)}
         backgroundImg={BtnBgTimer}
         icon={IconTimer}
       />

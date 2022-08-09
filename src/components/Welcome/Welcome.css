@@ -1,8 +1,8 @@
-.intro {
+.welcome {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  background-image: url('../../assets/images/intro-bg.webp');
+  background-image: url('../../assets/images/bg-welcome.webp');
 }
 
 .btn--start {
@@ -24,7 +24,7 @@
   color: var(--yellow);
 }
 
-.intro input[type='text'] {
+.welcome input[type='text'] {
   all: unset;
   align-self: stretch;
   transition: all 0.2s ease-in-out;
@@ -37,11 +37,11 @@
   -webkit-text-stroke: 0;
 }
 
-.intro input[type='text']:focus {
+.welcome input[type='text']:focus {
   border: 2px solid var(--white);
 }
 
-.intro__content {
+.welcome__content {
   display: flex;
   flex-basis: 60%;
   flex-direction: column;
@@ -52,17 +52,17 @@
   font-size: 1.25rem;
 }
 
-.intro__content h2 {
+.welcome__content h2 {
   text-transform: uppercase;
   font-size: 3.5rem;
 }
 
-.intro__content h5 {
+.welcome__content h5 {
   margin-bottom: 32px;
   color: var(--white);
 }
 
-.intro__content p {
+.welcome__content p {
   margin: 8px 0;
 }
 

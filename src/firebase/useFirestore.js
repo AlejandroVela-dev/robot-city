@@ -11,7 +11,7 @@ import {
 } from 'firebase/firestore';
 
 export const getScores = async (queryLimit = 5) => {
-  // Prepare query
+  // Prepare query for top scores (5 by default)
   const scoresRef = collection(dbFirestore, 'scores');
   const scoresQuery = query(
     scoresRef,
@@ -19,13 +19,13 @@ export const getScores = async (queryLimit = 5) => {
     limit(queryLimit)
   );
 
-  // Fetch data and handle errors
+  // Fetch scores and handle errors
   const scoresSnapshot = await getDocs(scoresQuery).catch((error) => {
-    console.error('Error while reading document from database: ', error);
+    console.error('Error reading documents from database: ', error);
   });
   if (!scoresSnapshot) return;
 
-  // Process and return data
+  // Process and return data as array of objects {id, playerName, playerTime}
   let scores = [];
   scoresSnapshot.forEach((score) => {
     scores.push({
@@ -37,26 +37,20 @@ export const getScores = async (queryLimit = 5) => {
 };
 
 export const addScore = async (score) => {
-  // Add data and handle errors
-  const scoreDoc = await addDoc(collection(dbFirestore, 'scores'), score).catch(
-    (error) => {
-      console.error('Error while adding document to database: ', error);
-    }
-  );
-  if (!scoreDoc) return;
-
-  // Return data
-  return scoreDoc;
+  const scoresRef = collection(dbFirestore, 'scores');
+  const scoreDoc = await addDoc(scoresRef, score).catch((error) => {
+    console.error('Error adding document to database: ', error);
+  });
+  return scoreDoc; // Undefined if error was thrown from await;
 };
 
 export const getRobotCoords = async (robotId) => {
-  // Prepare query
   const robotRef = doc(dbFirestore, 'robots', `${robotId}`);
   const robotSnapshot = await getDoc(robotRef).catch((error) => {
-    console.error('Error while reading document from database: ', error);
+    console.error(
+      `Error reading document with ID ${robotId} from database: `,
+      error
+    );
   });
-  if (!robotSnapshot) return;
-
-  // Return data
-  return robotSnapshot.data();
+  return robotSnapshot.data(); // Undefined if document (robotSnapshot) doesn't exist
 };

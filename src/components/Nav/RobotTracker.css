@@ -1,4 +1,4 @@
-.roster-checklist {
+.robot-tracker {
   display: flex;
   justify-content: center;
   height: 100%;
@@ -7,7 +7,7 @@
   width: 100%;
 }
 
-.roster-checklist img {
+.robot-tracker img {
   position: relative;
   border: 2px solid var(--yellow);
   border-radius: 20px;
@@ -17,7 +17,7 @@
   overflow: hidden;
 }
 
-.robot-picture-holder {
+.robot-picture {
   position: relative;
   height: 100%;
 }
@@ -28,7 +28,7 @@
   left: 0;
   border: 2px solid var(--yellow);
   border-radius: 20px;
-  background-image: url('../../assets/images/found-marker.webp');
+  background-image: url('../../assets/images/marker-found.webp');
   background-position: center;
   background-size: contain;
   width: 100%;

@@ -1,12 +1,12 @@
-.scoreboard {
+.leaderboard {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: url('../../assets/images/scoreboard-bg.webp');
+  background: url('../../assets/images/bg-leaderboard.webp');
   background-size: cover;
 }
 
-.scoreboard__content {
+.leaderboard__content {
   display: flex;
   position: relative;
   flex-direction: column;
@@ -21,23 +21,23 @@
   font-size: 1.25rem;
 }
 
-.scoreboard h2,
-.scoreboard h3,
-.scoreboard h5 {
+.leaderboard h2,
+.leaderboard h3,
+.leaderboard h5 {
   text-transform: uppercase;
 }
 
-.scoreboard h2 {
+.leaderboard h2 {
   color: var(--yellow);
   font-size: 3.5rem;
 }
 
-.scoreboard h3 {
+.leaderboard h3 {
   color: var(--yellow);
   font-size: 2.25rem;
 }
 
-.scoreboard h5 {
+.leaderboard h5 {
   margin-bottom: 18px;
   font-size: 1.25rem;
 }
@@ -84,7 +84,7 @@
   color: var(--info);
 }
 
-.score-form {
+.game-results {
   color: var(--yellow);
   font-size: 1.25rem;
 }
@@ -96,7 +96,7 @@
   gap: 8px;
 }
 
-.score-form button {
+.game-results button {
   padding: 0 1.5rem;
   font-size: 1.25rem;
 }
@@ -108,7 +108,7 @@
 }
 
 .btn--retry,
-.score-form button {
+.game-results button {
   transition: all 0.2s ease-in-out;
   border: 2px solid var(--yellow);
   background-color: var(--yellow-overlay);
@@ -120,7 +120,7 @@
 }
 
 .btn--retry:hover,
-.score-form button:hover {
+.game-results button:hover {
   border: 2px solid var(--yellow);
   color: var(--yellow);
 }

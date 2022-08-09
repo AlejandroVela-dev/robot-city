@@ -5,7 +5,7 @@ import Notification from './Notification';
 const NotificationContext = createContext();
 
 const NotificationProvider = (props) => {
-  // Messages are stored on State. Reducer manages adding or removing notifications from state array based on type
+  // Messages are stored on State. Reducer manages adding or removing notifications from state array based on action.type
   const [state, dispatch] = useReducer((state, action) => {
     switch (action.type) {
       case 'ADD_NOTIFICATION':
@@ -40,13 +40,15 @@ const NotificationProvider = (props) => {
 export const useNotification = () => {
   const dispatch = useContext(NotificationContext);
 
-  /*  Will always return an action with fixed type (New notification), and a notification 
-      object with id and already spread props (type and message from dispatch invocation) 
+  /*  Will always return an action with fixed type (ADD_NOTIFICATION)
+      Requires type and message parameters
+      Type: 'success' / 'info' / 'error'
+      Message: string
   */
-  return (props) => {
+  return (type, message) => {
     dispatch({
       type: 'ADD_NOTIFICATION',
-      payload: { id: v4(), ...props },
+      payload: { id: v4(), type, message },
     });
   };
 };
