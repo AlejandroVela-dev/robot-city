@@ -14,7 +14,7 @@
 
 ## Live preview
 
-> WIP
+> https://alejandrovela-dev.github.io/robot-city/ (WIP)
 
 ## Screenshots
 
@@ -42,8 +42,8 @@ Prototype previously designed on Figma:
 
 ## Credits
 
-This project is an assignment from [TheOdinProject](https://www.theodinproject.com).
-Illustrations were created by illustrator and concept artist [Egor Klyuchnyk](https://chekavo.artstation.com/)
+- This project is an assignment from [TheOdinProject](https://www.theodinproject.com).
+- Robot City was designed by illustrator and concept artist [Egor Klyuchnyk](https://chekavo.artstation.com/)
 
 ## Contact
 
