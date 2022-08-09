@@ -18,32 +18,32 @@
 
 ## Screenshots
 
-> ![Intro]()
-> ![Game]()
-> ![Leaderboard]()
+> WIP
 
 ## Technologies
 
 - [React](https://reactjs.org/) - A JavaScript library for building user interfaces
 - [Firebase](https://firebase.google.com/) - Backend development platform
+- [bad-words](https://www.npmjs.com/package/bad-words) - A JavaScript filter for badwords
 - [Figma](https://www.figma.com/) - Web-based graphics editing tool and UI design app
 
 ## Features
 
-- Global Leaderboard with optional submit when the player reaches top 5
-- Server-side checks for finding Robots
-- Profanity filter for usernames
+- Global leaderboard with optional data submit when the player reaches top 5 scores
+- Server-side checks when finding Robots
+- Profanity filter for player names
 - Responsive design
 
 ## Design
 
 Prototype previously designed on Figma:
 
-> ![Figma Prototype]()
+> WIP
 
 ## Credits
 
 This project is an assignment from [TheOdinProject](https://www.theodinproject.com).
+Illustrations were created by illustrator and concept artist [Egor Klyuchnyk](https://chekavo.artstation.com/)
 
 ## Contact
 
