@@ -1,25 +1,43 @@
 import './Welcome.css';
 import Filter from 'bad-words';
 import { useNotification } from '../../notifications/NotificationProvider';
+import { getScores } from '../../firebase/useFirestore';
 const filter = new Filter();
 
 const Welcome = ({ setPlayerName, robots, gameStart }) => {
   const Notification = useNotification();
 
-  const handleSubmit = (e) => {
+  const isPlayerNameTaken = async (topScores, playerName) => {
+    return topScores.some((score) => {
+      return (score.playerName = playerName);
+    });
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const playerNameInput = e.target.playerName;
+    const playerName = playerNameInput.value;
 
     // PlayerName Profanity Check
-    if (filter.isProfane(playerNameInput.value)) {
+    if (filter.isProfane(playerName)) {
       playerNameInput.focus();
       Notification('error', 'Hey! No bad words allowed here!');
-    } else {
-      // Game starts
-      Notification('info', "Be quick! There's no time to waste!");
-      setPlayerName(playerNameInput.value);
-      gameStart();
+      return;
     }
+
+    // Check if playerName already exists (prevents user not being able to properly identify its score)
+    const topScores = await getScores(5);
+    if (!topScores) return;
+    if (isPlayerNameTaken(topScores, playerName)) {
+      playerNameInput.focus();
+      Notification('error', 'This name already exists in our Leaderboard.');
+      return;
+    }
+
+    // Game starts
+    Notification('info', "Be quick! There's no time to waste!");
+    setPlayerName(playerName);
+    gameStart();
   };
 
   return (
