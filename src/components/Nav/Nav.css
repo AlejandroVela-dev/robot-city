@@ -8,4 +8,9 @@ nav {
   justify-content: space-between;
   height: 80px;
   margin: 16px;
+  pointer-events: none;
+}
+
+nav * {
+  pointer-events: auto;
 }

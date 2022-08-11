@@ -9,4 +9,9 @@ footer {
   justify-content: space-between;
   height: 75px;
   margin: 16px;
+  pointer-events: none;
+}
+
+footer * {
+  pointer-events: auto;
 }
