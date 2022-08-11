@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/robot-city/static/css/main.f81d53e5.css",
-    "main.js": "/robot-city/static/js/main.cc6ab488.js",
+    "main.css": "/robot-city/static/css/main.249cf762.css",
+    "main.js": "/robot-city/static/js/main.03cd180b.js",
     "static/media/main-robotcity.webp": "/robot-city/static/media/main-robotcity.ce702b4b98c4d692c130.webp",
     "static/media/bg-welcome.webp": "/robot-city/static/media/bg-welcome.d4f3fe3aaed379e5bac6.webp",
     "static/media/bg-leaderboard.webp": "/robot-city/static/media/bg-leaderboard.0e6797f7371ee4bfdf70.webp",
     "static/media/bg-notification.webp": "/robot-city/static/media/bg-notification.875600310b36fa448c65.webp",
+    "static/media/robot-thedoofwarrior.webp": "/robot-city/static/media/robot-thedoofwarrior.32eb1d4db04af1bc3e06.webp",
     "static/media/VT323-Regular.woff2": "/robot-city/static/media/VT323-Regular.643b920566fddd0d7d2c.woff2",
     "static/media/btn-bg-logo.webp": "/robot-city/static/media/btn-bg-logo.9f67bc70a14bfffd1c0b.webp",
     "static/media/btn-bg-github.webp": "/robot-city/static/media/btn-bg-github.bf04c54807e5de0b54bb.webp",
     "static/media/btn-bg-timer.webp": "/robot-city/static/media/btn-bg-timer.5b2d9ee3dab6f88f410c.webp",
     "static/media/btn-bg-credit.webp": "/robot-city/static/media/btn-bg-credit.49b4e8004e17c943e65c.webp",
-    "static/media/robot-thedoofwarrior.webp": "/robot-city/static/media/robot-thedoofwarrior.b249579169f1a042ebcb.webp",
     "static/media/robot-mojojojo.webp": "/robot-city/static/media/robot-mojojojo.a9d0eecfae94131d21ae.webp",
     "static/media/robot-mrpoppybutthole.webp": "/robot-city/static/media/robot-mrpoppybutthole.e7739b5e7836c8351eb7.webp",
     "static/media/icon-github.webp": "/robot-city/static/media/icon-github.b824d3d1f678084f87ca.webp",
@@ -23,11 +23,11 @@
     "static/media/icon-error.webp": "/robot-city/static/media/icon-error.ab1cd3828bd491cbeb77.webp",
     "static/media/cursor.webp": "/robot-city/static/media/cursor.b7420918564d053b7434.webp",
     "index.html": "/robot-city/index.html",
-    "main.f81d53e5.css.map": "/robot-city/static/css/main.f81d53e5.css.map",
-    "main.cc6ab488.js.map": "/robot-city/static/js/main.cc6ab488.js.map"
+    "main.249cf762.css.map": "/robot-city/static/css/main.249cf762.css.map",
+    "main.03cd180b.js.map": "/robot-city/static/js/main.03cd180b.js.map"
   },
   "entrypoints": [
-    "static/css/main.f81d53e5.css",
-    "static/js/main.cc6ab488.js"
+    "static/css/main.249cf762.css",
+    "static/js/main.03cd180b.js"
   ]
 }
