@@ -5,6 +5,7 @@ import {
   collection,
   query,
   orderBy,
+  deleteDoc,
   limit,
   doc,
   onSnapshot,
@@ -21,10 +22,11 @@ export const useFirestore = () => {
       orderBy('playerTime', 'asc'),
       limit(5)
     );
-    // Subscribes to Scores and sets updated data when a new snapshot is available
+    // Subscribes to top 5 scores query
     const scoresUnsubscribe = onSnapshot(
       scoresQuery,
       (snapshot) => {
+        // Updates scores everytime a new snapshot is available
         const scoresData = snapshot.docs.map((score) => {
           return {
             id: score.id,
@@ -32,9 +34,15 @@ export const useFirestore = () => {
           };
         });
         setScores(scoresData);
+        // Track score that got removed from top 5 and delete it
+        snapshot.docChanges().forEach(async (change) => {
+          if (change.type === 'removed') {
+            await deleteScoreById(change.doc.id);
+          }
+        });
       },
       (error) => {
-        console.error('There was an error reading scores: ', error);
+        console.error('There was an error getting snapshots: ', error);
       }
     );
     // Removes listener when component unmounts
@@ -50,6 +58,14 @@ export const addScore = async (score) => {
     console.error('Error adding document to database: ', error);
   });
   return scoreDoc; // Undefined if error was thrown from await;
+};
+
+export const deleteScoreById = async (id) => {
+  const scoresRef = collection(dbFirestore, 'scores');
+  const docRef = doc(scoresRef, `${id}`);
+  return await deleteDoc(docRef).catch((error) => {
+    console.error('Error removing document from database: ', error);
+  });
 };
 
 export const getRobotCoords = async (robotId) => {
