@@ -8,8 +8,11 @@ import ContextMenu from './ContextMenu';
 const Game = ({ robots, robotHasBeenFound, gameEnd }) => {
   const [clickCoords, setClickCoords] = useState({ x: 0, y: 0 });
   const [isContextMenuVisible, setIsContextMenuVisible] = useState(false);
+
   const Notification = useNotification();
-  const imgRef = useRef(); // Will provide access to Image DOM element for width/height measurements when locating robots
+
+  // Provides access to Image DOM element for width/height measurements when locating robots and displaying ContextMenu
+  const imgRef = useRef();
 
   const toggleContextMenu = () => {
     setIsContextMenuVisible((prevStatus) => !prevStatus);
@@ -30,7 +33,7 @@ const Game = ({ robots, robotHasBeenFound, gameEnd }) => {
   };
 
   const isRobotAtCoords = (relativeCoords, robotCoords) => {
-    /* MarginX/Y work as a 'hitbox' around the robot x/y location */
+    // MarginX/Y work as a 'hitbox' around the robot x/y location
     const isRobotAtX =
       Math.abs(relativeCoords.relX - robotCoords.relX) < robotCoords.marginX;
     const isRobotAtY =
@@ -43,14 +46,12 @@ const Game = ({ robots, robotHasBeenFound, gameEnd }) => {
     if (!robotCoords) return;
 
     const relativeCoords = getRelativeCoords(coords);
-
     if (isRobotAtCoords(relativeCoords, robotCoords)) {
       robotHasBeenFound(robot.id);
       Notification('success', `${robot.name} was found!`);
     } else {
       Notification('error', `That's not ${robot.name}... Keep looking!`);
     }
-
     toggleContextMenu();
   };
 
@@ -71,6 +72,10 @@ const Game = ({ robots, robotHasBeenFound, gameEnd }) => {
       />
       {isContextMenuVisible && (
         <ContextMenu
+          imgSize={{
+            x: imgRef.current.offsetWidth,
+            y: imgRef.current.offsetHeight,
+          }}
           robots={robots}
           clickCoords={clickCoords}
           searchRobotAtCoords={searchRobotAtCoords}

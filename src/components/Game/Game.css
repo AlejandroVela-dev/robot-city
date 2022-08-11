@@ -1,3 +1,7 @@
+.game {
+  display: flex;
+}
+
 .main-robot-city {
   width: 100%;
 }

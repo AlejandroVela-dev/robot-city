@@ -4,10 +4,16 @@
   flex-direction: column;
   justify-content: center;
   border-radius: 20px;
+  top: 0;
+  left: 0;
   background-color: var(--black-overlay);
   font-size: 1.25rem;
   overflow: hidden;
   box-shadow: var(--black) 2px 2px 10px;
+  z-index: 2;
+  /* Handles ContextMenu location */
+  transform: translateX(min(var(--click-x), calc(var(--imgWidth) - 100%)))
+    translateY(min(var(--click-y), calc(var(--imgHeight) - 100%)));
 }
 
 .context-menu li {
