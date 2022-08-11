@@ -2,38 +2,46 @@ import dbFirestore from './config';
 import {
   addDoc,
   getDoc,
-  getDocs,
   collection,
   query,
   orderBy,
   limit,
   doc,
+  onSnapshot,
 } from 'firebase/firestore';
+import { useEffect, useState } from 'react';
 
-export const getScores = async (queryLimit = 5) => {
-  // Prepare query for top scores (5 by default)
-  const scoresRef = collection(dbFirestore, 'scores');
-  const scoresQuery = query(
-    scoresRef,
-    orderBy('playerTime', 'asc'),
-    limit(queryLimit)
-  );
+export const useFirestore = () => {
+  const [scores, setScores] = useState([]);
 
-  // Fetch scores and handle errors
-  const scoresSnapshot = await getDocs(scoresQuery).catch((error) => {
-    console.error('Error reading documents from database: ', error);
-  });
-  if (!scoresSnapshot) return;
+  useEffect(() => {
+    // Prepares query for top 5 scores
+    const scoresQuery = query(
+      collection(dbFirestore, 'scores'),
+      orderBy('playerTime', 'asc'),
+      limit(5)
+    );
+    // Subscribes to Scores and sets updated data when a new snapshot is available
+    const scoresUnsubscribe = onSnapshot(
+      scoresQuery,
+      (snapshot) => {
+        const scoresData = snapshot.docs.map((score) => {
+          return {
+            id: score.id,
+            ...score.data(),
+          };
+        });
+        setScores(scoresData);
+      },
+      (error) => {
+        console.error('There was an error reading scores: ', error);
+      }
+    );
+    // Removes listener when component unmounts
+    return () => scoresUnsubscribe();
+  }, []);
 
-  // Process and return data as array of objects {id, playerName, playerTime}
-  let scores = [];
-  scoresSnapshot.forEach((score) => {
-    scores.push({
-      id: score.id,
-      ...score.data(),
-    });
-  });
-  return scores;
+  return [scores];
 };
 
 export const addScore = async (score) => {

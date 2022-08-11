@@ -1,48 +1,33 @@
 import './Leaderboard.css';
 import { useEffect, useState } from 'react';
-import { getScores, addScore } from '../../firebase/useFirestore';
+import { addScore } from '../../firebase/useFirestore';
 import { useNotification } from '../../notifications/NotificationProvider';
 import Preloader from '../../utils/Preloader';
 import TopScores from './TopScores';
 import GameResults from './GameResults';
 import timeFormatter from '../../utils/timeFormatter';
 
-const Leaderboard = ({ playerName, playerTime, gameRestart }) => {
-  const [topScores, setTopScores] = useState([]);
+const Leaderboard = ({ topScores, playerName, playerTime, gameRestart }) => {
   const [isTopScore, setIsTopScore] = useState(false);
-  const [isDataLoading, setIsDataLoading] = useState(true);
+  const [isDataLoading, setIsDataLoading] = useState(false);
 
   const Notification = useNotification();
 
   const submitScore = async () => {
     setIsDataLoading(true);
     // Submits score to database
-    const docRef = await addScore({ playerName, playerTime });
-    if (!docRef) return;
+    const scoreRef = await addScore({ playerName, playerTime });
+    if (!scoreRef) return;
     Notification('success', `Your score was successfully saved!`);
-    // Retrieves and updates top scores
-    const scores = await getScores(5);
-    if (!scores) return;
-    setTopScores(scores);
-    // Disables preloader
     setIsDataLoading(false);
   };
 
   useEffect(() => {
-    const dataLoad = async () => {
-      // Retrieves and set top scores
-      const scores = await getScores(5);
-      if (!scores) return;
-      setTopScores(scores);
-      // Disables preloader
-      setIsDataLoading(false);
-      // Checks if playerTime is a new topScore
-      if (playerTime < scores.at(-1)?.playerTime) {
-        setIsTopScore(true);
-      }
-    };
-    dataLoad();
-  }, [playerTime]);
+    // Checks if playerTime is a new topScore
+    playerTime < topScores.at(-1)?.playerTime
+      ? setIsTopScore(true)
+      : setIsTopScore(false);
+  }, [playerTime, topScores]);
 
   return (
     <div className="leaderboard">

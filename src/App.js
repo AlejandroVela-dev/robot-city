@@ -1,6 +1,7 @@
 import './App.css';
 import { useState } from 'react';
 import { robotsData } from './data/robotsData';
+import { useFirestore } from './firebase/useFirestore';
 import Modal from './utils/Modal/Modal';
 import Welcome from './components/Welcome/Welcome';
 import Leaderboard from './components/Leaderboard/Leaderboard';
@@ -9,6 +10,9 @@ import Game from './components/Game/Game';
 import Footer from './components/Footer/Footer';
 
 const App = () => {
+  // Stores topScores from Firestore and updates real-time
+  const [topScores] = useFirestore();
+
   // Stores player properties. Set in "Welcome" component and read in "Leaderboard"
   const [playerName, setPlayerName] = useState('');
   const [playerTime, setPlayerTime] = useState({ start: 0, end: 0 });
@@ -58,6 +62,7 @@ const App = () => {
         <Modal>
           {modalContent === 'welcome' && (
             <Welcome
+              topScores={topScores}
               setPlayerName={setPlayerName}
               robots={robots}
               gameStart={gameStart}
@@ -65,6 +70,7 @@ const App = () => {
           )}
           {modalContent === 'leaderboard' && (
             <Leaderboard
+              topScores={topScores}
               playerName={playerName}
               playerTime={playerTime.end - playerTime.start}
               gameRestart={gameRestart}

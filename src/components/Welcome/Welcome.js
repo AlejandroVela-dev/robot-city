@@ -1,19 +1,16 @@
 import './Welcome.css';
 import Filter from 'bad-words';
 import { useNotification } from '../../notifications/NotificationProvider';
-import { getScores } from '../../firebase/useFirestore';
 const filter = new Filter();
 
-const Welcome = ({ setPlayerName, robots, gameStart }) => {
+const Welcome = ({ topScores, setPlayerName, robots, gameStart }) => {
   const Notification = useNotification();
 
-  const isPlayerNameTaken = async (topScores, playerName) => {
-    return topScores.some((score) => {
-      return (score.playerName = playerName);
-    });
+  const isPlayerNameTaken = (playerName) => {
+    return topScores.some((score) => score.playerName === playerName);
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     const playerNameInput = e.target.playerName;
     const playerName = playerNameInput.value;
@@ -26,11 +23,9 @@ const Welcome = ({ setPlayerName, robots, gameStart }) => {
     }
 
     // Check if playerName already exists (prevents user not being able to properly identify its score)
-    const topScores = await getScores(5);
-    if (!topScores) return;
-    if (isPlayerNameTaken(topScores, playerName)) {
+    if (isPlayerNameTaken(playerName)) {
       playerNameInput.focus();
-      Notification('error', 'This name already exists in our Leaderboard.');
+      Notification('error', 'Name already exists in the leaderboard');
       return;
     }
 
