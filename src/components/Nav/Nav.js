@@ -4,12 +4,12 @@ import Button from '../../utils/Button/Button';
 import RobotTracker from './RobotTracker';
 import Timer from './Timer';
 
-const Nav = ({ robots, isGameActive }) => {
+const Nav = ({ robots, isGameActive, playerTime }) => {
   return (
     <nav>
       <Button text="Robot City" backgroundImg={btnBgLogo} />
       <RobotTracker robots={robots} />
-      <Timer isGameActive={isGameActive} />
+      <Timer isGameActive={isGameActive} playerTime={playerTime} />
     </nav>
   );
 };

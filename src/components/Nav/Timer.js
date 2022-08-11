@@ -4,7 +4,7 @@ import Button from '../../utils/Button/Button';
 import BtnBgTimer from '../../assets/images/btn-bg-timer.webp';
 import IconTimer from '../../assets/images/icon-timer.webp';
 
-const Timer = ({ isGameActive }) => {
+const Timer = ({ isGameActive, playerTime }) => {
   const [time, setTime] = useState(0);
 
   useEffect(() => {
@@ -12,15 +12,15 @@ const Timer = ({ isGameActive }) => {
     // Player has started looking for looking for Robots
     if (isGameActive) {
       intervalId = setInterval(() => {
-        setTime((prevTime) => prevTime + 10);
-      }, 10);
+        setTime(Math.abs(Date.now() - playerTime.start));
+      }, 100);
     }
     // Clean-up everytime isGameActive changes
     return () => {
       clearInterval(intervalId);
       setTime(0);
     };
-  }, [isGameActive]);
+  }, [isGameActive, playerTime]);
 
   return (
     <>

@@ -79,7 +79,11 @@ const App = () => {
         </Modal>
       )}
       <div className="app">
-        <Nav robots={robots} isGameActive={isGameActive} />
+        <Nav
+          robots={robots}
+          isGameActive={isGameActive}
+          playerTime={playerTime}
+        />
         <Game
           robots={robots}
           robotHasBeenFound={robotHasBeenFound}
