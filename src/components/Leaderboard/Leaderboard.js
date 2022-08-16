@@ -24,9 +24,13 @@ const Leaderboard = ({ topScores, playerName, playerTime, gameRestart }) => {
 
   useEffect(() => {
     // Checks if playerTime is a new topScore
-    playerTime < topScores.at(-1)?.playerTime
-      ? setIsTopScore(true)
-      : setIsTopScore(false);
+    if (topScores.length < 5) {
+      setIsTopScore(true);
+    } else {
+      playerTime < topScores.at(-1)?.playerTime
+        ? setIsTopScore(true)
+        : setIsTopScore(false);
+    }
   }, [playerTime, topScores]);
 
   return (
@@ -35,7 +39,7 @@ const Leaderboard = ({ topScores, playerName, playerTime, gameRestart }) => {
         <h2>Leaderboard</h2>
         <h5>Top Scores</h5>
         <div className="scores">
-          <div className="score">
+          <div className="score--header">
             <h3>Username</h3>
             <h3>Time</h3>
           </div>
