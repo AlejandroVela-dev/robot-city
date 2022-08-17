@@ -10,7 +10,7 @@ const Footer = () => {
     <footer>
       <Button
         text="GitHub"
-        link="https://github.com/alejandrovela-dev"
+        link="https://github.com/AlejandroVela-dev/robot-city"
         icon={IconGitHub}
         backgroundImg={BackgroundGitHub}
         additionalClassName="btn--github"

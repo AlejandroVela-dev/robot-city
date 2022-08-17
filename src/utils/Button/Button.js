@@ -1,16 +1,8 @@
 import './Button.css';
 
 const Button = ({ text, link, icon, backgroundImg, additionalClassName }) => {
-  const btnStyle = {
-    cursor: link && 'pointer',
-  };
-
-  return (
-    <div
-      className={`btn ${additionalClassName ?? ''}`}
-      onClick={() => link && window.open(link)}
-      style={btnStyle}
-    >
+  const buttonBody = (
+    <>
       <img className="btn-image" src={backgroundImg} alt="bg" />
       <div className="btn-overlay">
         <div className={'btn-content'}>
@@ -18,7 +10,24 @@ const Button = ({ text, link, icon, backgroundImg, additionalClassName }) => {
           <p>{text}</p>
         </div>
       </div>
-    </div>
+    </>
+  );
+
+  return (
+    <>
+      {link ? (
+        <a
+          href={link}
+          target="_blank"
+          rel="noreferrer"
+          className={`btn ${additionalClassName ?? ''}`}
+        >
+          {buttonBody}
+        </a>
+      ) : (
+        <div className={`btn ${additionalClassName ?? ''}`}>{buttonBody}</div>
+      )}
+    </>
   );
 };
 
