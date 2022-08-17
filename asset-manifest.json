@@ -1,33 +1,33 @@
 {
   "files": {
-    "main.css": "/robot-city/static/css/main.ce719b2b.css",
-    "main.js": "/robot-city/static/js/main.dbbf2de8.js",
-    "static/media/main-robotcity.webp": "/robot-city/static/media/main-robotcity.ce702b4b98c4d692c130.webp",
-    "static/media/bg-welcome.webp": "/robot-city/static/media/bg-welcome.d4f3fe3aaed379e5bac6.webp",
-    "static/media/bg-leaderboard.webp": "/robot-city/static/media/bg-leaderboard.0e6797f7371ee4bfdf70.webp",
-    "static/media/bg-notification.webp": "/robot-city/static/media/bg-notification.875600310b36fa448c65.webp",
-    "static/media/robot-thedoofwarrior.webp": "/robot-city/static/media/robot-thedoofwarrior.32eb1d4db04af1bc3e06.webp",
-    "static/media/VT323-Regular.woff2": "/robot-city/static/media/VT323-Regular.643b920566fddd0d7d2c.woff2",
-    "static/media/btn-bg-logo.webp": "/robot-city/static/media/btn-bg-logo.9f67bc70a14bfffd1c0b.webp",
+    "main.css": "/robot-city/static/css/main.87b68629.css",
+    "main.js": "/robot-city/static/js/main.18e4f0b8.js",
+    "static/media/main-robotcity.webp": "/robot-city/static/media/main-robotcity.21aef22c39fb3661f853.webp",
+    "static/media/bg-welcome.webp": "/robot-city/static/media/bg-welcome.7161ea4a1fc2e2f44af0.webp",
+    "static/media/bg-leaderboard.webp": "/robot-city/static/media/bg-leaderboard.279897f95704e6e55c2c.webp",
+    "static/media/VT323-Regular.woff2": "/robot-city/static/media/VT323-Regular.cd0474aff3561ee1ccf5.woff2",
     "static/media/btn-bg-github.webp": "/robot-city/static/media/btn-bg-github.bf04c54807e5de0b54bb.webp",
     "static/media/btn-bg-timer.webp": "/robot-city/static/media/btn-bg-timer.5b2d9ee3dab6f88f410c.webp",
     "static/media/btn-bg-credit.webp": "/robot-city/static/media/btn-bg-credit.49b4e8004e17c943e65c.webp",
-    "static/media/robot-mojojojo.webp": "/robot-city/static/media/robot-mojojojo.a9d0eecfae94131d21ae.webp",
-    "static/media/robot-mrpoppybutthole.webp": "/robot-city/static/media/robot-mrpoppybutthole.e7739b5e7836c8351eb7.webp",
+    "static/media/btn-bg-logo.webp": "/robot-city/static/media/btn-bg-logo.888878c42c93df9f8e4e.webp",
+    "static/media/robot-thedoofwarrior.webp": "/robot-city/static/media/robot-thedoofwarrior.5a9d0277cf93a49c8ad8.webp",
+    "static/media/robot-mojojojo.webp": "/robot-city/static/media/robot-mojojojo.aaf2a4ce36041a0fdaea.webp",
+    "static/media/bg-notification.webp": "/robot-city/static/media/bg-notification.5aab941a50ad9c385444.webp",
+    "static/media/robot-mrpoppybutthole.webp": "/robot-city/static/media/robot-mrpoppybutthole.8024ced5fe174b250852.webp",
     "static/media/icon-github.webp": "/robot-city/static/media/icon-github.b824d3d1f678084f87ca.webp",
     "static/media/icon-timer.webp": "/robot-city/static/media/icon-timer.69f74cf31e29312ead1e.webp",
     "static/media/found-mark.webp": "/robot-city/static/media/found-mark.9222a4769357b12e709c.webp",
     "static/media/icon-success.webp": "/robot-city/static/media/icon-success.e06d1898c996ab4770ca.webp",
     "static/media/icon-credit.webp": "/robot-city/static/media/icon-credit.5e2c8353d6990aec005c.webp",
     "static/media/icon-info.webp": "/robot-city/static/media/icon-info.dfcc3f2ba3ec2e87d970.webp",
+    "index.html": "/robot-city/index.html",
     "static/media/icon-error.webp": "/robot-city/static/media/icon-error.ab1cd3828bd491cbeb77.webp",
     "static/media/cursor.webp": "/robot-city/static/media/cursor.b7420918564d053b7434.webp",
-    "index.html": "/robot-city/index.html",
-    "main.ce719b2b.css.map": "/robot-city/static/css/main.ce719b2b.css.map",
-    "main.dbbf2de8.js.map": "/robot-city/static/js/main.dbbf2de8.js.map"
+    "main.87b68629.css.map": "/robot-city/static/css/main.87b68629.css.map",
+    "main.18e4f0b8.js.map": "/robot-city/static/js/main.18e4f0b8.js.map"
   },
   "entrypoints": [
-    "static/css/main.ce719b2b.css",
-    "static/js/main.dbbf2de8.js"
+    "static/css/main.87b68629.css",
+    "static/js/main.18e4f0b8.js"
   ]
 }
