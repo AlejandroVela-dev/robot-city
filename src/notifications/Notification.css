@@ -1,50 +1,52 @@
 .notification-wrapper {
-  position: fixed;
-  top: 15vh;
-  right: 16px;
-  z-index: 4;
   display: flex;
+  position: fixed;
+  top: calc(75px + 1rem + 4vh);
+  right: 1rem;
   flex-direction: column;
-  align-items: flex-end;
-  justify-content: center;
+  transition: height 0.5s;
+  z-index: 4;
+  font-size: 1.25rem;
+  gap: 1rem;
+  pointer-events: none;
+}
+
+.notification-wrapper * {
+  pointer-events: all;
 }
 
 .notification-item {
   display: flex;
   flex-direction: column;
-  margin-right: auto;
-  margin-bottom: 20px;
-  min-width: 300px;
+  align-self: flex-end;
   border: 2px solid;
   border-bottom: none;
-  border-radius: 20px;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+  border-radius: var(--border-radius);
   background-image: url(../assets/images/bg-notification.webp);
   background-size: cover;
+  width: max-content;
   overflow: hidden;
   animation: SlideLeft 0.5s;
   animation-fill-mode: forwards;
-  font-size: 1.25rem;
-  width: max-content;
 }
 
 @keyframes SlideLeft {
   0% {
-    margin-left: 120%;
+    transform: translateX(120%);
   }
 
   100% {
-    margin-left: 0;
+    transform: translateX(0%);
   }
 }
 
 @keyframes SlideRight {
   0% {
-    margin-left: 0;
+    transform: translateX(0);
   }
 
   100% {
-    margin-left: 120%;
+    transform: translateX(120%);
   }
 }
 
@@ -57,18 +59,17 @@
   display: flex;
   align-items: center;
   background-color: var(--black-overlay);
-  padding: 10px;
-  gap: 8px;
+  padding: 0.75rem 1rem;
+  gap: 0.5rem;
 }
 
 .notification-body img {
-  width: 25px;
-  height: auto;
+  width: 1em;
 }
 
 .notification-item .bar {
   width: 100%;
-  height: 6px;
+  height: 0.33rem;
 }
 
 .success {
@@ -96,4 +97,20 @@
 
 .notification-item.info .bar {
   background-color: var(--info);
+}
+
+@media only screen and (max-width: 768px) {
+  .notification-wrapper {
+    font-size: 0.75rem;
+    gap: 0.5rem;
+    top: calc(50px + 0.5rem + 4vh);
+  }
+
+  .notification-body {
+    display: flex;
+    align-items: center;
+    background-color: var(--black-overlay);
+    padding: 0.5rem;
+    gap: 0.25rem;
+  }
 }

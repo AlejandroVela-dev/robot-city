@@ -1,106 +1,102 @@
 .welcome {
   display: flex;
-  align-items: center;
   justify-content: flex-end;
   background-image: url('../../assets/images/bg-welcome.webp');
-}
-
-.btn--start {
-  transition: all 0.2s ease-in-out;
-  margin-top: 16px;
-  border: 2px solid var(--yellow);
-  background-color: var(--yellow-overlay);
-  cursor: pointer;
-  padding: 0 3rem;
-  text-transform: uppercase;
-  color: var(--white);
-  font-family: inherit;
-  font-size: 2.5rem;
-  -webkit-text-stroke: 0;
-}
-
-.btn--start:hover {
-  border: 2px solid var(--yellow);
-  color: var(--yellow);
-}
-
-.welcome input[type='text'] {
-  all: unset;
-  align-self: stretch;
-  transition: all 0.2s ease-in-out;
-  margin: 10px 0;
-  border: 2px solid var(--yellow);
-  background-color: var(--yellow-overlay);
-  padding: 4px 8px;
-  color: var(--white);
+  max-width: 650px;
   font-size: 1.25rem;
-  -webkit-text-stroke: 0;
-}
-
-.welcome input[type='text']:focus {
-  border: 2px solid var(--white);
 }
 
 .welcome__content {
   display: flex;
-  flex-basis: 60%;
+  flex: 0 1 70%;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
   background-color: var(--black-overlay);
   padding: 2rem;
-  font-size: 1.25rem;
 }
 
 .welcome__content h2 {
+  margin-bottom: -0.25rem;
+  text-align: center;
   text-transform: uppercase;
-  font-size: 3.5rem;
 }
 
 .welcome__content h5 {
-  margin-bottom: 32px;
+  margin-bottom: 1.5rem;
+  text-align: center;
   color: var(--white);
 }
 
-.welcome__content p {
-  margin: 8px 0;
+.welcome input[type='text'] {
+  all: unset;
+  transition: all 0.2s;
+  margin: 0.75rem 0;
+  border: var(--border);
+  background-color: var(--yellow-overlay);
+  padding: 0.25rem 0.5rem;
+  text-shadow: none;
+  color: var(--white);
+}
+
+.welcome input[type='text']:focus {
+  border-color: var(--white);
 }
 
 .robots {
   display: flex;
   flex-direction: column;
-  align-self: flex-start;
-  justify-content: flex-start;
-  margin: 20px 0;
-  gap: 16px;
+  margin: 1.5rem 0;
+  gap: 1rem;
 }
 
 .robot-description {
   display: flex;
-  flex: 1;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 16px;
+  gap: 1rem;
 }
 
-.robot-description img {
-  border: 2px solid var(--yellow);
-  width: 100px;
-  height: auto;
+.robots img {
+  border: var(--border);
+  border-radius: var(--border-radius);
+  width: 75px;
 }
 
-.robot-name {
+.robot-info {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  font-size: 1.75rem;
-}
-
-.robot-name p {
-  margin: 0;
+  font-size: 1.5rem;
 }
 
 .robot-origin {
   color: var(--white);
-  font-size: 1.25rem;
+  font-size: 0.75em;
+}
+
+.btn--start {
+  transition: color 0.2s;
+  border: var(--border);
+  border-radius: var(--border-radius);
+  background-color: var(--yellow-overlay);
+  cursor: pointer;
+  text-transform: uppercase;
+  color: var(--white);
+  font-size: 2.5rem;
+}
+
+.btn--start:hover {
+  color: var(--yellow);
+}
+
+@media only screen and (max-width: 768px) {
+  .welcome {
+    font-size: 1rem;
+  }
+
+  .welcome__content {
+    flex: 1;
+    padding: 1.5rem;
+  }
+
+  .robot-info {
+    font-size: 1.5rem;
+  }
 }

@@ -13,13 +13,14 @@ const Footer = () => {
         link="https://github.com/alejandrovela-dev"
         icon={IconGitHub}
         backgroundImg={BackgroundGitHub}
+        additionalClassName="btn--github"
       />
       <Button
         text="Egor Klyuchnyk"
         link="https://chekavo.artstation.com/"
         icon={IconCredit}
         backgroundImg={BackgroundCredit}
-        additionalClassName="btn-credits"
+        additionalClassName="btn--credits"
       />
     </footer>
   );

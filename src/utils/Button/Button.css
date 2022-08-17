@@ -3,30 +3,29 @@
   position: relative;
   align-items: center;
   justify-content: flex-end;
-  border-radius: 20px;
-  background-size: contain;
+  border: var(--border);
+  border-radius: var(--border-radius);
   height: 100%;
   overflow: hidden;
-  font-size: 2.5rem;
-  border: 2px solid var(--yellow);
+  text-transform: uppercase;
+  font-size: 2rem;
 }
 
 .btn-image {
-  opacity: 0;
-  max-height: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: left;
 }
 
 .btn-overlay {
   display: flex;
   position: absolute;
   align-items: center;
-  justify-content: center;
-  width: 70%;
+  justify-content: flex-end;
   height: 100%;
-  text-transform: uppercase;
 }
 
-.btn-overlay::after {
+.btn-overlay::before {
   position: absolute;
   top: 0;
   left: 0;
@@ -39,24 +38,58 @@
 
 .btn-content {
   display: flex;
-  justify-content: center;
   align-items: center;
   z-index: 1;
-  gap: 1rem;
   padding: 1rem;
+  padding-left: 1.5rem;
+  gap: 0.25em;
 }
 
 .btn-content img {
-  width: 1.1em;
+  width: 1.125em;
+  height: auto;
 }
 
-.btn-credits {
+/* Specific buttons sizing  */
+.btn--logo .btn-image {
+  width: 270px;
+}
+
+.btn--timer .btn-image {
+  width: 300px;
+}
+
+.btn--github .btn-image {
+  width: 250px;
+}
+
+.btn--credits .btn-image {
+  width: 320px;
+}
+
+.btn--credits {
   font-size: 1.75rem;
-  line-height: 0.8;
-  white-space: nowrap;
-  gap: 0.5rem;
 }
 
-.btn-credits img {
-  width: 1.2em;
+@media only screen and (max-width: 768px) {
+  .btn {
+    font-size: 1rem;
+  }
+
+  .btn-content {
+    padding: 0.5rem;
+    padding-left: 1rem;
+  }
+
+  .btn--timer .btn-image {
+    width: 170px;
+  }
+
+  .btn--github .btn-image {
+    width: 140px;
+  }
+
+  .btn--credits .btn-image {
+    width: 190px;
+  }
 }

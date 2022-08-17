@@ -53,8 +53,8 @@ const Welcome = ({ topScores, setPlayerName, robots, gameStart }) => {
         <p>
           Goodness! It's you! I probably did not recognize you because of the
           red arm...
-        </p>
-        <p>
+          <br />
+          <br />
           Anyway! I truly need your cooperation! Please help me find these
           disoriented robots!
         </p>
@@ -63,7 +63,7 @@ const Welcome = ({ topScores, setPlayerName, robots, gameStart }) => {
             return (
               <div className="robot-description" key={robot.id}>
                 <img src={robot.picture} alt={robot.name} />
-                <div className="robot-name">
+                <div className="robot-info">
                   <p>{robot.name}</p>
                   <p className="robot-origin">{robot.origin}</p>
                 </div>

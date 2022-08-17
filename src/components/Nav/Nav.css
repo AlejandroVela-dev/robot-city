@@ -4,13 +4,35 @@ nav {
   top: 0;
   right: 0;
   left: 0;
-  align-items: center;
   justify-content: space-between;
-  height: 80px;
-  margin: 16px;
+  margin: 1rem;
+  height: 75px;
   pointer-events: none;
 }
 
 nav * {
   pointer-events: auto;
+}
+
+@media only screen and (max-width: 950px) {
+  nav .btn--logo {
+    display: none;
+  }
+
+  nav .btn--timer {
+    order: 1;
+    margin: 0;
+  }
+
+  .robot-tracker {
+    order: 2;
+    margin-left: auto;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  nav {
+    margin: 0.5rem;
+    height: 50px;
+  }
 }

@@ -18,7 +18,7 @@ const Leaderboard = ({ topScores, playerName, playerTime, gameRestart }) => {
     // Submits score to database
     const scoreRef = await addScore({ playerName, playerTime });
     if (!scoreRef) return;
-    Notification('success', `Your score was successfully saved!`);
+    Notification('success', `Your score was recorded successfully!`);
     setIsDataLoading(false);
   };
 

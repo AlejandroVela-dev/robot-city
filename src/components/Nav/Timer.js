@@ -28,6 +28,7 @@ const Timer = ({ isGameActive, playerTime }) => {
         text={timeFormatter(time)}
         backgroundImg={BtnBgTimer}
         icon={IconTimer}
+        additionalClassName={'btn--timer'}
       />
     </>
   );

@@ -15,8 +15,10 @@ const GameResults = ({ isTopScore, submitScore }) => {
           <p>Wow! Now that's an eagle eye!</p>
           {isSubmitFormVisible ? (
             <>
-              <p>May I save your score in my database?</p>
-              <button onClick={handleSubmit}>Ok</button>
+              <p>May I record that score in my database?</p>
+              <button className="btn--submit" onClick={handleSubmit}>
+                Ok
+              </button>
             </>
           ) : (
             <p>Thank you so much!</p>

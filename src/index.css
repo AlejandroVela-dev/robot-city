@@ -44,6 +44,7 @@ button,
 input,
 select {
   margin: 0;
+  padding: 0;
 }
 
 html {
@@ -75,6 +76,7 @@ img,
 video {
   max-width: 100%;
   height: auto;
+  max-height: 100%;
 }
 
 /* Set core root defaults */

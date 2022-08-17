@@ -1,24 +1,16 @@
 .leaderboard {
   display: flex;
-  align-items: center;
-  justify-content: center;
   background: url('../../assets/images/bg-leaderboard.webp');
-  background-size: cover;
+  font-size: 1.25rem;
 }
 
 .leaderboard__content {
   display: flex;
-  position: relative;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
   background-color: var(--black-overlay);
   padding: 2rem;
   min-width: 400px;
-  min-height: 550px;
-  text-align: center;
-  color: var(--white);
-  font-size: 1.25rem;
 }
 
 .leaderboard h2,
@@ -28,99 +20,92 @@
 }
 
 .leaderboard h2 {
-  color: var(--yellow);
-  font-size: 3.5rem;
-}
-
-.leaderboard h3 {
-  color: var(--yellow);
-  font-size: 2.25rem;
+  margin-bottom: -0.25rem;
+  text-align: center;
 }
 
 .leaderboard h5 {
-  margin-bottom: 18px;
-  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: var(--white);
 }
 
 .scores {
   display: flex;
-  position: relative;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
   margin-bottom: 2rem;
-  width: 100%;
   min-height: 220px;
-  overflow-y: auto;
-  scrollbar-width: thin;
-  scrollbar-color: var(--yellow) var(--yellow-overlay);
-  gap: 8px;
+  text-align: center;
+  color: var(--white);
+  gap: 0.5rem;
 }
 
-.scores::-webkit-scrollbar {
-  width: 8px;
+.score--header {
+  color: var(--yellow);
 }
 
-.scores::-webkit-scrollbar-track {
-  background-color: var(--yellow-overlay);
-}
-
-.scores::-webkit-scrollbar-thumb {
-  background-color: var(--yellow);
-}
-
-.scores .preloader {
-  flex: 1;
-}
-
-.score {
+.score,
+.score--header {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  align-self: stretch;
 }
 
-.score.player-score {
+.preloader {
+  flex: 1;
+  align-self: center;
+}
+
+.player-score {
   margin-top: auto;
   color: var(--info);
 }
 
 .game-results {
-  color: var(--yellow);
-  font-size: 1.25rem;
-}
-
-.score-form__submit {
   display: flex;
-  justify-content: center;
-  margin-top: 8px;
-  gap: 8px;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+  min-height: 75px;
+  text-align: center;
+  color: var(--yellow);
 }
 
 .game-results button {
+  margin-top: 0.5rem;
   padding: 0 1.5rem;
-  font-size: 1.25rem;
 }
 
 .btn--retry {
-  margin-top: auto;
-  padding: 0 3rem;
+  border-radius: var(--border-radius);
   font-size: 2.5rem;
 }
 
+.btn--submit {
+  font-size: 1.25rem;
+}
+
 .btn--retry,
-.game-results button {
-  transition: all 0.2s ease-in-out;
-  border: 2px solid var(--yellow);
+.btn--submit {
+  transition: color 0.2s;
+  border: var(--border);
   background-color: var(--yellow-overlay);
   cursor: pointer;
   text-transform: uppercase;
   color: var(--white);
-  font-family: inherit;
-  -webkit-text-stroke: 0;
 }
 
 .btn--retry:hover,
-.game-results button:hover {
-  border: 2px solid var(--yellow);
+.btn--submit:hover {
   color: var(--yellow);
+}
+
+@media only screen and (max-width: 768px) {
+  .leaderboard {
+    font-size: 1rem;
+  }
+
+  .leaderboard__content {
+    min-width: 315px;
+    padding: 2rem;
+  }
 }

@@ -7,7 +7,9 @@ const RobotTracker = ({ robots }) => {
         return (
           <div
             key={robot.id}
-            className={`robot-picture ${robot.hasBeenFound && 'found-robot'}`}
+            className={`robot-picture ${
+              robot.hasBeenFound ? 'found-mark' : ''
+            }`}
           >
             <img src={robot.picture} alt={robot.name} />
           </div>

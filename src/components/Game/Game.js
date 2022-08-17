@@ -13,14 +13,20 @@ const Game = ({ robots, robotHasBeenFound, gameEnd }) => {
 
   // Provides access to Image DOM element for width/height measurements when locating robots and displaying ContextMenu
   const imgRef = useRef();
+  const gameRef = useRef();
 
   const toggleContextMenu = () => {
     setIsContextMenuVisible((prevStatus) => !prevStatus);
   };
 
   const contextMenuTrigger = (e) => {
+    // Allows relative measures to overflow element
+    const imgElement = e.target.getBoundingClientRect();
     if (!isContextMenuVisible) {
-      setClickCoords({ x: e.pageX, y: e.pageY });
+      setClickCoords({
+        x: e.pageX + Math.abs(imgElement.left),
+        y: e.pageY,
+      });
     }
     toggleContextMenu();
   };
@@ -62,7 +68,7 @@ const Game = ({ robots, robotHasBeenFound, gameEnd }) => {
   }, [robots, gameEnd]);
 
   return (
-    <div className="game">
+    <div className="game" ref={gameRef}>
       <img
         ref={imgRef}
         onClick={contextMenuTrigger}
@@ -72,9 +78,9 @@ const Game = ({ robots, robotHasBeenFound, gameEnd }) => {
       />
       {isContextMenuVisible && (
         <ContextMenu
-          imgSize={{
-            x: imgRef.current.offsetWidth,
-            y: imgRef.current.offsetHeight,
+          gameSize={{
+            x: gameRef.current.offsetWidth,
+            y: gameRef.current.offsetHeight,
           }}
           robots={robots}
           clickCoords={clickCoords}
