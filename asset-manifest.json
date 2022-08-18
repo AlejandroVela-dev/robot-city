@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/robot-city/static/css/main.87b68629.css",
-    "main.js": "/robot-city/static/js/main.18e4f0b8.js",
+    "main.js": "/robot-city/static/js/main.3ed7a018.js",
     "static/media/main-robotcity.webp": "/robot-city/static/media/main-robotcity.21aef22c39fb3661f853.webp",
     "static/media/bg-welcome.webp": "/robot-city/static/media/bg-welcome.7161ea4a1fc2e2f44af0.webp",
     "static/media/bg-leaderboard.webp": "/robot-city/static/media/bg-leaderboard.279897f95704e6e55c2c.webp",
@@ -24,10 +24,10 @@
     "index.html": "/robot-city/index.html",
     "static/media/cursor.webp": "/robot-city/static/media/cursor.b7420918564d053b7434.webp",
     "main.87b68629.css.map": "/robot-city/static/css/main.87b68629.css.map",
-    "main.18e4f0b8.js.map": "/robot-city/static/js/main.18e4f0b8.js.map"
+    "main.3ed7a018.js.map": "/robot-city/static/js/main.3ed7a018.js.map"
   },
   "entrypoints": [
     "static/css/main.87b68629.css",
-    "static/js/main.18e4f0b8.js"
+    "static/js/main.3ed7a018.js"
   ]
 }
