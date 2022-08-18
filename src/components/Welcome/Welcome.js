@@ -38,8 +38,8 @@ const Welcome = ({ topScores, setPlayerName, robots, gameStart }) => {
   return (
     <div className="welcome">
       <form onSubmit={handleSubmit} className="welcome__content">
-        <h2>Robot City</h2>
-        <h5>Art by Egor Klyuchnyk</h5>
+        <h1>Robot City</h1>
+        <p>Art by Egor Klyuchnyk</p>
         <p>Beep beep! I am Alejandro, human/cyborg relations. And you are?</p>
         <input
           type="text"
@@ -49,6 +49,7 @@ const Welcome = ({ topScores, setPlayerName, robots, gameStart }) => {
           autoFocus
           required
           autoComplete="off"
+          aria-label="playerName"
         />
         <p>
           Goodness! It's you! I probably did not recognize you because of the
@@ -62,9 +63,9 @@ const Welcome = ({ topScores, setPlayerName, robots, gameStart }) => {
           {robots.map((robot) => {
             return (
               <div className="robot-description" key={robot.id}>
-                <img src={robot.picture} alt={robot.name} />
+                <img src={robot.picture} alt="Robot" width="75" height="75" />
                 <div className="robot-info">
-                  <p>{robot.name}</p>
+                  <h2>{robot.name}</h2>
                   <p className="robot-origin">{robot.origin}</p>
                 </div>
               </div>

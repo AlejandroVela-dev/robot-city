@@ -9,6 +9,8 @@
   background-color: var(--black-overlay);
   overflow: hidden;
   font-size: 1.25rem;
+  box-shadow: 0px 2px 2px 0px var(--black), 0px 3px 1px -2px var(--black),
+    0px 1px 5px 0px var(--black);
   /* Handles ContextMenu location */
   transform: translateX(min(var(--click-x), calc(var(--imgWidth) - 100%)))
     translateY(min(var(--click-y), calc(var(--imgHeight) - 100%)));

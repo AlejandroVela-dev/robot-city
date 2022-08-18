@@ -1,3 +1,14 @@
+/* Font Import (critical resource priority) */
+@font-face {
+  font-family: 'VT323';
+  src: local('VT323-Regular'),
+    url('./assets/fonts/VT323-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+  font-variant-ligatures: no-common-ligatures;
+}
+
 /* Mini-Reset */
 html,
 body,

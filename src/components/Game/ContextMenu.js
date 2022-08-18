@@ -25,7 +25,7 @@ const ContextMenu = ({
             searchRobotAtCoords(robot, clickCoords);
           }}
         >
-          <img src={robot.picture} alt={robot.name} />
+          <img src={robot.picture} alt="Robot" width="60" height="60" />
           <p>{robot.name}</p>
         </li>
       ))}

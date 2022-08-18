@@ -11,7 +11,7 @@ const RobotTracker = ({ robots }) => {
               robot.hasBeenFound ? 'found-mark' : ''
             }`}
           >
-            <img src={robot.picture} alt={robot.name} />
+            <img src={robot.picture} alt={robot.name} width="71" height="71" />
           </div>
         );
       })}

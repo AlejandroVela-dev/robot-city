@@ -12,7 +12,7 @@
 }
 
 .notification-wrapper * {
-  pointer-events: all;
+  pointer-events: auto;
 }
 
 .notification-item {
@@ -104,6 +104,7 @@
     font-size: 0.75rem;
     gap: 0.5rem;
     top: calc(50px + 0.5rem + 4vh);
+    right: 0.5rem;
   }
 
   .notification-body {

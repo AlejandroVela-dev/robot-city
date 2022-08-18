@@ -9,6 +9,7 @@
   overflow: hidden;
   text-transform: uppercase;
   font-size: 2rem;
+  color: inherit;
 }
 
 .btn-image {

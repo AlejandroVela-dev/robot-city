@@ -13,20 +13,21 @@
   min-width: 400px;
 }
 
-.leaderboard h2,
-.leaderboard h3,
-.leaderboard h5 {
+.leaderboard h1,
+.leaderboard h2 {
   text-transform: uppercase;
 }
 
-.leaderboard h2 {
+.leaderboard h1 {
   margin-bottom: -0.25rem;
   text-align: center;
+  font-size: 3.5rem;
 }
 
-.leaderboard h5 {
+.leaderboard h1 + p {
   margin-bottom: 2rem;
   text-align: center;
+  text-transform: uppercase;
   color: var(--white);
 }
 
@@ -42,6 +43,7 @@
 
 .score--header {
   color: var(--yellow);
+  font-size: 2rem;
 }
 
 .score,
@@ -105,7 +107,7 @@
   }
 
   .leaderboard__content {
-    min-width: 315px;
     padding: 2rem;
+    min-width: 315px;
   }
 }

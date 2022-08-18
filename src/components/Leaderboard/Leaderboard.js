@@ -36,12 +36,12 @@ const Leaderboard = ({ topScores, playerName, playerTime, gameRestart }) => {
   return (
     <div className="leaderboard">
       <div className="leaderboard__content">
-        <h2>Leaderboard</h2>
-        <h5>Top Scores</h5>
+        <h1>Leaderboard</h1>
+        <p>Top Scores</p>
         <div className="scores">
           <div className="score--header">
-            <h3>Username</h3>
-            <h3>Time</h3>
+            <h2>Username</h2>
+            <h2>Time</h2>
           </div>
           {isDataLoading ? <Preloader /> : <TopScores scores={topScores} />}
           <div className="score player-score">

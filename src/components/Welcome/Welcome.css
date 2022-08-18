@@ -8,28 +8,29 @@
 
 .welcome__content {
   display: flex;
-  flex: 0 1 70%;
+  flex-basis: 70%;
   flex-direction: column;
   background-color: var(--black-overlay);
   padding: 2rem;
 }
 
-.welcome__content h2 {
+.welcome__content h1 {
   margin-bottom: -0.25rem;
   text-align: center;
   text-transform: uppercase;
+  font-size: 3.5rem;
 }
 
-.welcome__content h5 {
+.welcome__content h1 + p {
   margin-bottom: 1.5rem;
   text-align: center;
   color: var(--white);
 }
 
 .welcome input[type='text'] {
-  all: unset;
   transition: all 0.2s;
   margin: 0.75rem 0;
+  outline: none;
   border: var(--border);
   background-color: var(--yellow-overlay);
   padding: 0.25rem 0.5rem;

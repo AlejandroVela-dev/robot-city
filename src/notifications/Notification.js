@@ -61,7 +61,7 @@ const Notification = ({ id, type, message, dispatch }) => {
       }`}
     >
       <div className="notification-body">
-        <img src={NotificationIcons[type]} alt={type} />
+        <img src={NotificationIcons[type]} alt={type} width="20" height="20" />
         <p>{message}</p>
       </div>
       <div className="bar" style={{ width: `${barWidth}%` }} />

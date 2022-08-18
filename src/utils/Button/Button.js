@@ -3,11 +3,17 @@ import './Button.css';
 const Button = ({ text, link, icon, backgroundImg, additionalClassName }) => {
   const buttonBody = (
     <>
-      <img className="btn-image" src={backgroundImg} alt="bg" />
+      <img
+        className="btn-image"
+        src={backgroundImg}
+        alt="Button Background"
+        height="71"
+        width="320"
+      />
       <div className="btn-overlay">
         <div className={'btn-content'}>
-          {icon && <img src={icon} alt={text}></img>}
-          <p>{text}</p>
+          {icon && <img src={icon} alt="Icon" width="36" height="36" />}
+          <h4>{text}</h4>
         </div>
       </div>
     </>

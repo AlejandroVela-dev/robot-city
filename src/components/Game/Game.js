@@ -70,6 +70,8 @@ const Game = ({ robots, robotHasBeenFound, gameEnd }) => {
   return (
     <div className="game" ref={gameRef}>
       <img
+        width="1920"
+        height="2689"
         ref={imgRef}
         onClick={contextMenuTrigger}
         className="main-robot-city"

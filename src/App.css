@@ -1,8 +1,3 @@
-@font-face {
-  font-family: 'VT323-Regular';
-  src: url('assets/fonts/VT323-Regular.woff2');
-}
-
 /* CSS VARIABLES */
 html {
   /* COLORS */
@@ -25,26 +20,11 @@ html {
     -1px -1px 1px #000, 1px 1px 1px #000, -2px -1px 1px #000, 2px 2px 1px #000;
   line-height: 1;
   color: var(--yellow);
-  font-family: 'VT323-Regular', serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-variant-ligatures: none;
+  font-family: 'VT323', serif;
 }
 
 .app {
   display: flex;
   position: relative;
   flex-direction: column;
-}
-
-h2 {
-  font-size: 3.5rem;
-}
-
-h3 {
-  font-size: 2rem;
-}
-
-h5 {
-  font-size: 1.25rem;
 }
