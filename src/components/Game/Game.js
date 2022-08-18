@@ -8,32 +8,36 @@ import ContextMenu from './ContextMenu';
 const Game = ({ robots, robotHasBeenFound, gameEnd }) => {
   const [clickCoords, setClickCoords] = useState({ x: 0, y: 0 });
   const [isContextMenuVisible, setIsContextMenuVisible] = useState(false);
-
-  const Notification = useNotification();
+  // Handle RobotCity dimensions and position relative to viewport
+  const [robotCityElement, setRobotCityElement] = useState({});
 
   // Provides access to Image DOM element for width/height measurements when locating robots and displaying ContextMenu
   const imgRef = useRef();
   const gameRef = useRef();
+
+  const Notification = useNotification();
 
   const toggleContextMenu = () => {
     setIsContextMenuVisible((prevStatus) => !prevStatus);
   };
 
   const contextMenuTrigger = (e) => {
-    // Allows relative measures to overflow element
-    const imgElement = e.target.getBoundingClientRect();
     if (!isContextMenuVisible) {
       setClickCoords({
-        x: e.pageX + Math.abs(imgElement.left),
+        x: e.pageX,
         y: e.pageY,
       });
+      // Allows measures of overflow element relative to viewport
+      setRobotCityElement(e.target.getBoundingClientRect());
     }
     toggleContextMenu();
   };
 
   const getRelativeCoords = (coords) => {
     return {
-      relX: coords.x / imgRef.current.offsetWidth,
+      relX:
+        (coords.x + Math.abs(robotCityElement.left)) /
+        imgRef.current.offsetWidth,
       relY: coords.y / imgRef.current.offsetHeight,
     };
   };
