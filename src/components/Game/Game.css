@@ -4,12 +4,14 @@
   overflow: auto;
 }
 
-.main-robot-city {
-  min-height: 100vh;
-}
-
 @media only screen and (max-width: 1024px) {
   .main-robot-city {
     max-width: 250vw;
+  }
+}
+
+@media only screen and (min-width: 1921px) {
+  .main-robot-city {
+    width: 100vw;
   }
 }

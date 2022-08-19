@@ -14,5 +14,20 @@
 .modal-content {
   border: var(--border);
   border-radius: var(--border-radius);
-  overflow: hidden;
+  height: min-content;
+  max-height: 100%;
+  overflow-y: auto;
+  scrollbar-width: thin;
+}
+
+.modal-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.modal-content::-webkit-scrollbar-track {
+  background: var(--black-overlay);
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+  background-color: var(--yellow);
 }

@@ -1,4 +1,3 @@
-/* CSS VARIABLES */
 html {
   /* COLORS */
   --yellow: hsl(41, 94%, 58%);
@@ -21,6 +20,21 @@ html {
   line-height: 1;
   color: var(--yellow);
   font-family: 'VT323', serif;
+  scrollbar-width: thin;
+  scrollbar-color: var(--yellow) var(--black-overlay);
+  background-color: var(--black);
+}
+
+html::-webkit-scrollbar {
+  width: 6px;
+}
+
+html::-webkit-scrollbar-track {
+  background: var(--black-overlay);
+}
+
+html::-webkit-scrollbar-thumb {
+  background-color: var(--yellow);
 }
 
 .app {
