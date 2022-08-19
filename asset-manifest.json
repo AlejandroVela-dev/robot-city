@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/robot-city/static/css/main.0a04a0a4.css",
-    "main.js": "/robot-city/static/js/main.91402716.js",
+    "main.js": "/robot-city/static/js/main.2d59c0aa.js",
     "static/media/main-robotcity.webp": "/robot-city/static/media/main-robotcity.21aef22c39fb3661f853.webp",
     "static/media/bg-welcome.webp": "/robot-city/static/media/bg-welcome.7161ea4a1fc2e2f44af0.webp",
     "static/media/bg-leaderboard.webp": "/robot-city/static/media/bg-leaderboard.279897f95704e6e55c2c.webp",
@@ -10,7 +10,13 @@
     "static/media/btn-bg-timer.webp": "/robot-city/static/media/btn-bg-timer.5b2d9ee3dab6f88f410c.webp",
     "static/media/btn-bg-credit.webp": "/robot-city/static/media/btn-bg-credit.49b4e8004e17c943e65c.webp",
     "static/media/btn-bg-logo.webp": "/robot-city/static/media/btn-bg-logo.888878c42c93df9f8e4e.webp",
+    "static/media/robot-meliodas.webp": "/robot-city/static/media/robot-meliodas.670a3807bb5f1299aeed.webp",
+    "static/media/robot-sentinel.webp": "/robot-city/static/media/robot-sentinel.141b234b60ab58570fd7.webp",
+    "static/media/robot-raiden.webp": "/robot-city/static/media/robot-raiden.d15aea893a8ed7ecd20b.webp",
+    "static/media/robot-goku.webp": "/robot-city/static/media/robot-goku.4b4bde291489d1de33fd.webp",
+    "static/media/robot-bender.webp": "/robot-city/static/media/robot-bender.a9e917e7e1331dcdeac6.webp",
     "static/media/robot-thedoofwarrior.webp": "/robot-city/static/media/robot-thedoofwarrior.6e760ecfca88b77085a2.webp",
+    "static/media/robot-bean.webp": "/robot-city/static/media/robot-bean.78af2708468bc20785ac.webp",
     "static/media/robot-mojojojo.webp": "/robot-city/static/media/robot-mojojojo.aaf2a4ce36041a0fdaea.webp",
     "static/media/bg-notification.webp": "/robot-city/static/media/bg-notification.5aab941a50ad9c385444.webp",
     "static/media/robot-mrpoppybutthole.webp": "/robot-city/static/media/robot-mrpoppybutthole.8024ced5fe174b250852.webp",
@@ -24,10 +30,10 @@
     "index.html": "/robot-city/index.html",
     "static/media/cursor.webp": "/robot-city/static/media/cursor.b7420918564d053b7434.webp",
     "main.0a04a0a4.css.map": "/robot-city/static/css/main.0a04a0a4.css.map",
-    "main.91402716.js.map": "/robot-city/static/js/main.91402716.js.map"
+    "main.2d59c0aa.js.map": "/robot-city/static/js/main.2d59c0aa.js.map"
   },
   "entrypoints": [
     "static/css/main.0a04a0a4.css",
-    "static/js/main.91402716.js"
+    "static/js/main.2d59c0aa.js"
   ]
 }
