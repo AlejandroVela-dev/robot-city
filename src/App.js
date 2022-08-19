@@ -1,6 +1,6 @@
 import './App.css';
 import { useState } from 'react';
-import { robotsData } from './data/robotsData';
+import getRandomRobots from './data/robotsData';
 import { useFirestore } from './firebase/useFirestore';
 import Modal from './utils/Modal/Modal';
 import Welcome from './components/Welcome/Welcome';
@@ -18,7 +18,7 @@ const App = () => {
   const [playerTime, setPlayerTime] = useState({ start: 0, end: 0 });
 
   // List of Robots and their properties. Gets modified when a robot is found. Feeds UI and back-end fetch actions
-  const [robots, setRobots] = useState(robotsData);
+  const [robots, setRobots] = useState(getRandomRobots());
 
   // Toggles between looking for robots or inactive (welcome/leaderboard). Used to control game Timer
   const [isGameActive, setIsGameActive] = useState(false);
@@ -34,7 +34,7 @@ const App = () => {
   };
 
   const gameEnd = () => {
-    setRobots(robotsData); // gameEnd is triggered when all Robots are found, we prevent loop by resetting data here
+    setRobots(getRandomRobots()); // gameEnd is triggered when all Robots are found, we prevent loop by resetting data here
     setIsGameActive(false);
     setPlayerTime({ ...playerTime, end: Date.now() });
     setModalContent('leaderboard');
