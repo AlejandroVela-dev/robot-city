@@ -1,9 +1,9 @@
 {
   "files": {
-    "main.css": "/robot-city/static/css/main.0a04a0a4.css",
+    "main.css": "/robot-city/static/css/main.affee05d.css",
     "main.js": "/robot-city/static/js/main.2d59c0aa.js",
     "static/media/main-robotcity.webp": "/robot-city/static/media/main-robotcity.21aef22c39fb3661f853.webp",
-    "static/media/bg-welcome.webp": "/robot-city/static/media/bg-welcome.7161ea4a1fc2e2f44af0.webp",
+    "static/media/bg-welcome.webp": "/robot-city/static/media/bg-welcome.e0bb7f900fa934694104.webp",
     "static/media/bg-leaderboard.webp": "/robot-city/static/media/bg-leaderboard.279897f95704e6e55c2c.webp",
     "static/media/VT323-Regular.woff2": "/robot-city/static/media/VT323-Regular.cd0474aff3561ee1ccf5.woff2",
     "static/media/btn-bg-github.webp": "/robot-city/static/media/btn-bg-github.bf04c54807e5de0b54bb.webp",
@@ -29,11 +29,11 @@
     "static/media/icon-error.webp": "/robot-city/static/media/icon-error.ab1cd3828bd491cbeb77.webp",
     "index.html": "/robot-city/index.html",
     "static/media/cursor.webp": "/robot-city/static/media/cursor.b7420918564d053b7434.webp",
-    "main.0a04a0a4.css.map": "/robot-city/static/css/main.0a04a0a4.css.map",
+    "main.affee05d.css.map": "/robot-city/static/css/main.affee05d.css.map",
     "main.2d59c0aa.js.map": "/robot-city/static/js/main.2d59c0aa.js.map"
   },
   "entrypoints": [
-    "static/css/main.0a04a0a4.css",
+    "static/css/main.affee05d.css",
     "static/js/main.2d59c0aa.js"
   ]
 }
