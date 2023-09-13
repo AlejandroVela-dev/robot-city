@@ -14,6 +14,13 @@ const Welcome = ({ topScores, setPlayerName, robots, gameStart }) => {
     e.preventDefault();
     const playerNameInput = e.target.playerName;
     const playerName = playerNameInput.value;
+    
+    // PlayerName Blank Check
+    if(!playerName.trim()){
+      playerNameInput.focus();
+      Notification('error', 'Hey! Your name is invisible!');
+      return;
+    }
 
     // PlayerName Profanity Check
     if (filter.isProfane(playerName)) {
